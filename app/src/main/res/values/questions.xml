@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="question_one">Тихий океан </string>
-    <string name="question_two"></string>
-    <string name="question_three"></string>
-    <string name="question_fore"></string>
-    <string name="question_five"></string>
-    <string name="question_six"></string>
-    <string name="question_seven"></string>
+    <string name="question_australia">Столица Австралии Канберра</string>
+    <string name="question_ocean">Тихий океан больше чем Атлантический</string>
+    <string name="question_mideast">Суэцкий канал соединяется с Красным морем и С Индийским океаном</string>
+    <string name="question_africa">Исток реки Нил в Египте</string>
+    <string name="question_americas">Река Амазонка самая большая река в Америке</string>
+    <string name="question_asia">Озеро Байкал самое древнее и самое глубокое в мире</string>
 </resources>
