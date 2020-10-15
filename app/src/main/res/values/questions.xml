@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="question_one">Тихий океан </string>
+    <string name="question_two"></string>
+    <string name="question_three"></string>
+    <string name="question_fore"></string>
+    <string name="question_five"></string>
+    <string name="question_six"></string>
+    <string name="question_seven"></string>
+</resources>
