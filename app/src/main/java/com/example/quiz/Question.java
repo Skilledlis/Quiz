@@ -3,10 +3,12 @@ package com.example.quiz;
 public class Question {
 
     private int mTextResId;
-    private boolean mAnswerTrue;
+    private int mImgResId;
+    private char mAnswerTrue;
 
-    public Question(int textResId, boolean answerTrue) {
+    public Question(int textResId, int imgRestId, char answerTrue) {
         mTextResId = textResId;
+        mImgResId = imgRestId;
         mAnswerTrue = answerTrue;
     }
 
@@ -14,15 +16,23 @@ public class Question {
         return mTextResId;
     }
 
-    public void setTextResId(int textResId) {
-        mTextResId = textResId;
+    public void setTexResId(int textResId) {
+        mImgResId = textResId;
     }
 
-    public boolean isAnswerTrue() {
+    public int getImgResId() {
+        return mImgResId;
+    }
+
+    public void setImgResId(int imgResId) {
+        mImgResId = imgResId;
+    }
+
+    public char isAnswerTrue() {
         return mAnswerTrue;
     }
 
-    public void setAnswerTrue(boolean answerTrue) {
+    public void setAnswerTrue(char answerTrue) {
         mAnswerTrue = answerTrue;
     }
 

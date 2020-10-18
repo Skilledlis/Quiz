@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Quiz</string>
-    <string name="true_button">True</string>
-    <string name="false_button">False</string>
+    <string name="A_button">A</string>
+    <string name="B_button">B</string>
+    <string name="C_button">C</string>
+    <string name="D_button">D</string>
     <string name="correct_toast">Correct</string>
     <string name="incorrect_toast">Incorrect</string>
     <string name="next_button">Next</string>
+    <string name="image_description">This is image Description</string>
 </resources>

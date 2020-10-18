@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="question_australia">Столица Австралии Канберра</string>
-    <string name="question_ocean">Тихий океан больше чем Атлантический</string>
-    <string name="question_mideast">Суэцкий канал соединяется с Красным морем и С Индийским океаном</string>
-    <string name="question_africa">Исток реки Нил в Египте</string>
+    <string name="question1">Вы намерены проехать перекресток прямо. Кому Вы обязаны уступить дорогу?</string>
+    <string name="question2">⁠Разрешено ли Вам остановиться на мосту на этом месте?</string>
+    <string name="question3">⁠Какие из указанных знаков разрешают движение грузовым автомобилям с массой не более 3,5 т?</string>
+    <string name="question4">Исток реки Нил в Египте</string>
     <string name="question_americas">Река Амазонка самая большая река в Америке</string>
     <string name="question_asia">Озеро Байкал самое древнее и самое глубокое в мире</string>
 </resources>
