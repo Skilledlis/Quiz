@@ -25,14 +25,14 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mQuestionImageView;
     private TextView mQuestionTextView;
 
-    private Question[] mQuestionBank = new Question[]{
+    private Question[] mQuestionBank = new Question[]{  ///// Массив вопроса, картинки и правильного ответа
         new Question(R.string.question1, R.drawable.quastion1,'C'),
         new Question(R.string.question2, R.drawable.quastion2,'B'),
         new Question(R.string.question3, R.drawable.quastion3, 'A'),
         new Question(R.string.question4,R.drawable.quastion4, 'B'),
     };
 
-    private int mCurrentIndex = 0;
+    private int mCurrentIndex;
 
     
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mQuestionImageView = findViewById(R.id.question_image_view);
         mQuestionTextView = findViewById(R.id.question_text_view);
 
-        mAButton = findViewById(R.id.A_button);
+        mAButton = findViewById(R.id.A_button); ///////////// Кнопка ответ А
         mAButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mBButton = findViewById(R.id.B_button);
+        mBButton = findViewById(R.id.B_button); ///////////// Кнопка ответ B
         mBButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mCButton = findViewById(R.id.C_button);
+        mCButton = findViewById(R.id.C_button); ///////////// Кнопка ответ C
         mCButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,30 +71,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mDButton = findViewById(R.id.D_button);
+        mDButton = findViewById(R.id.D_button); ///////////// Кнопка ответ D
         mDButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkAnswer('C');
+                checkAnswer('D');
                 updateQuestion();
             }
         });
 
-        mNextButton = findViewById(R.id.next_button);
-        mNextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateQuestion();
-            }
-        });
-        mPrevButton = findViewById(R.id.prev_button);
+        mPrevButton = findViewById(R.id.prev_button); ///////////// Кнопка предыдущий вопрос (Previous)
         mPrevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateQuestion();
+
+                mCurrentIndex = (mCurrentIndex-1)%mQuestionBank.length;
+
+                try {
+                    updateQuestion();
+                }catch (ArrayIndexOutOfBoundsException ae){
+                    Toast.makeText(MainActivity.this,
+                            "ArrayIndexOutOfBoundsException: " +
+                                    "Please Press next button or answer the question",
+                            Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
+        mNextButton = findViewById(R.id.next_button); ///////////// Кнопка следующий вопрос (Next)
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+
+                updateQuestion();
+            }
+        });
         updateQuestion();
     }
 
@@ -113,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateQuestion() {
-        mCurrentIndex = (mCurrentIndex+1)%mQuestionBank.length;
         int questionText = mQuestionBank[mCurrentIndex].getTextResId();
         int questionImg = mQuestionBank[mCurrentIndex].getImgResId();
         mQuestionTextView.setText(questionText);
